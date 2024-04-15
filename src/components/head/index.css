@@ -1,0 +1,13 @@
+.head-container {
+  display: flex;
+  background-color: rgb(154, 246, 154);
+  padding: 7px;
+}
+.head-container #head-title {
+  text-align: center;
+  width: 80%;
+  -webkit-text-stroke: 1px rgb(92, 92, 236);
+  color: transparent;
+  font-size: 36px;
+  padding-left: 40px;
+}

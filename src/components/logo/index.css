@@ -1,0 +1,22 @@
+#logo {
+  height: 45px;
+  width: 45px;
+}
+#logo-text {
+  margin: 0;
+  padding: 13px 2px;
+  font-family: Georgia;
+  font-size: 18px;
+}
+.logo-container {
+  display: flex;
+}
+.logo-container #first {
+  color: rgb(50, 50, 165);
+}
+.logo-container #second {
+  color: rgb(247, 96, 26);
+}
+.logo-container #third {
+  color: darkgreen;
+}
