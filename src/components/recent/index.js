@@ -7,6 +7,9 @@ import "./index.css";
 const Index = () => {
   const [data, setData] = useState(null);
   const [cities, setCities] = useState([]);
+  /**
+   * get recently searched city data from localstorage and store int cities
+   */
   useEffect(() => {
     const cities = new Set(localStorage.getItem("recentCities").split("/"));
     const cityarr = [];
@@ -16,6 +19,10 @@ const Index = () => {
     console.log(cityarr);
     setCities(cityarr);
   }, []);
+  /**
+   * show the weather report from city where user clicked on
+   * @param {*} city
+   */
   const showWeather = async (city) => {
     try {
       const res = await axios.get(

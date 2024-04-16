@@ -8,8 +8,10 @@ const Index = () => {
   const [city, setCity] = useState("");
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
+  /**
+   * get last search city from localstorage;
+   */
   useEffect(() => {
-    console.log(window.location.href.split("/").pop());
     if (localStorage.getItem("city")) {
       setCity(localStorage.getItem("city"));
     }
@@ -17,6 +19,11 @@ const Index = () => {
   useEffect(() => {
     getAPIdata();
   });
+  /**
+   * fetch weather api data for city
+   * save api data to data state
+   * if data is not fetched set error as true otherwise its false
+   */
   const getAPIdata = async () => {
     try {
       if (city !== "") {
@@ -42,6 +49,10 @@ const Index = () => {
       setError(true);
     }
   };
+  /**
+   * clouser function for searching city
+   * @returns callback
+   */
   const debounceSearch = () => {
     let timer;
     return (e) => {
@@ -53,6 +64,9 @@ const Index = () => {
       }, 500);
     };
   };
+  /**
+   * when we search for city name
+   */
   const handleOnChange = debounceSearch();
   return (
     <div className="home-container">
