@@ -2,14 +2,14 @@ import React from "react";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import "./index.css";
 
-const index = () => {
+const index = ({ setPage }) => {
   return (
     <div className="aside-container">
-      <div className="aside-section">
+      <div className="aside-section" onClick={() => setPage(0)}>
         <div>Home</div>
         <ArrowRightIcon />
       </div>
-      <div className="aside-section">
+      <div className="aside-section" onClick={() => setPage(1)}>
         <div>Recent</div>
         <ArrowRightIcon />
       </div>

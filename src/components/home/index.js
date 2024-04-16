@@ -16,7 +16,7 @@ const Index = () => {
   }, []);
   useEffect(() => {
     getAPIdata();
-  }, [city]);
+  });
   const getAPIdata = async () => {
     try {
       if (city !== "") {
@@ -25,7 +25,15 @@ const Index = () => {
         );
         setData({ ...response.data });
         console.log(data);
-        if (response.data) localStorage.setItem("city", city);
+        if (response.data) {
+          localStorage.setItem("city", city);
+          localStorage.setItem(
+            "recentCities",
+            localStorage.getItem("recentCities") +
+              "/" +
+              response.data.location.name
+          );
+        }
         setError(false);
       }
     } catch {
@@ -42,7 +50,7 @@ const Index = () => {
         setCity(e.target.value);
         console.log(city);
         localStorage.setItem("city", e.target.value);
-      }, 1500);
+      }, 500);
     };
   };
   const handleOnChange = debounceSearch();
