@@ -1,0 +1,28 @@
+.weather-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.weather-container {
+  background-color: rgb(24, 24, 24);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 22px;
+  color: white;
+  margin: 20px 40px;
+  padding: 20px;
+}
+.weather-image {
+  height: 70px;
+  width: 70px;
+}
+.weather-title {
+  color: pink;
+  font-family: serif;
+}
+.weather-section-first {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
